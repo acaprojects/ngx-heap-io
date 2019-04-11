@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LIBRARY_SETTINGS } from '../settings';
 
 declare global {
     interface Window {
@@ -64,6 +65,7 @@ export class HeapIoService {
                 heap[p[c]] = o(p[c]);
         };
         window.heap = heap;
+        LIBRARY_SETTINGS.log('Service', 'Injected heap.io into page');
         this.service = heap;
     }
 
@@ -79,6 +81,7 @@ export class HeapIoService {
             disableTextCapture: options.disable_text_capture,
             cookiePath: options.cookie_path
         }
+        LIBRARY_SETTINGS.log('Service', `Initialising heap.io for application: ${options.app_id}`);
         this.service.load(options.app_id, heap_ops);
     }
 
@@ -88,6 +91,7 @@ export class HeapIoService {
      */
     public identify(id: string) {
         if (!this.service) { throw new Error('Heap IO is not initialised'); }
+        LIBRARY_SETTINGS.log('Service', `Set identity to: ${id}`);
         this.service.identify(id);
     }
     
@@ -97,6 +101,7 @@ export class HeapIoService {
      */
     public addUserProperties(properties: { [name:string]: any }) {
         if (!this.service) { throw new Error('Heap IO is not initialised'); }
+        LIBRARY_SETTINGS.log('Service', `Adding user properties: ${properties}`);
         this.service.traddUserPropertiesack(properties);
     }
 
@@ -107,6 +112,7 @@ export class HeapIoService {
      */
     public track(event_name: string, properties: { [name:string]: any }) {
         if (!this.service) { throw new Error('Heap IO is not initialised'); }
+        LIBRARY_SETTINGS.log('Service', `Adding event tracking: ${event_name}, ${properties}`);
         this.service.track(event_name, properties);
     }
 
