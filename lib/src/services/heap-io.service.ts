@@ -4,16 +4,13 @@ import { LIBRARY_SETTINGS } from '../settings';
 declare global {
     interface Window {
         heap: any;
-        forceSSL: boolean;
-        secureCookie: boolean;
-        disableTextCapture: boolean;
-        cookiePath: string;
+        debug: boolean;
     }
 }
 
 export interface IHeapIOOptions {
     /** Heap IO application identifier */
-    app_id: string;
+    app_id: string | number;
     /** Whether to force Heap IO connection to use SSL */
     force_ssl: boolean;
     /** Whether Heap IO cookies should be secure */

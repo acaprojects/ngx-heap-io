@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { DatePickerModule } from '../../lib/src/public_api';
+import { HeapIOModule } from '../../lib/src/public_api';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { DatePickerModule } from '../../lib/src/public_api';
   ],
   imports: [
     BrowserModule,
-    DatePickerModule,
+    HeapIOModule,
     BrowserAnimationsModule
   ],
   providers: [],
