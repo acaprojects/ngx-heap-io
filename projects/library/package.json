@@ -1,0 +1,20 @@
+{
+  "name": "@acaprojects/ngx-heap-io",
+  "version": "0.0.0-development",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "angular",
+    "pipes"
+  ],
+  "description": "Assortment of Pipes for Angular 8+",
+  "homepage": "https://github.com/acaprojects/ngx-heap-io#readme",
+  "bugs": {
+      "url": "https://github.com/acaprojects/ngx-heap-io/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
+  }
+}
